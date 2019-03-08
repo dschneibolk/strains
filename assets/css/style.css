@@ -1,0 +1,96 @@
+
+a {
+  color:#A6C54B;
+}
+
+h1 {
+  font-family: 'Crimson Text', serif;
+  margin:0px;
+}
+
+a:hover {
+  color:#cdf84d;
+}
+
+.white {
+    color:white;
+}
+
+.green {
+    color:#A6C54B;
+}
+
+.hr-green{
+  border-color:#A6C54B;
+}
+
+.bg-green {
+  background-color:#A6C54B;
+}
+
+.bg-dark {
+  background-color:#212121!important;
+}
+
+.bg-pattern {
+  height:300px;
+  background-image: url("../images/pattern2.png");
+}
+
+#title{
+  font-size:60px;
+}
+#subTitle {
+  font-size:30px;
+}
+
+.centerme {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+.imagebox {
+    padding: 0px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .imagebox img {
+    opacity: 1;
+    transition: 0.5s opacity;
+    width:100%;
+  }
+  
+  .imagebox .imagebox-desc {
+    background-color: rgba(59, 59, 59, 0.6);
+    bottom: 0px;
+    color: white;
+    font-size: 1.2em;
+    left: 0px;
+    padding: 10px 15px;
+    position: absolute;
+    transition: 0.5s padding;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .imagebox:hover img {
+    opacity: 0.7;
+  }
+  
+  .imagebox:hover .imagebox-desc {
+    padding-bottom: 10%;
+}
+
+.custom-toggler .navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(166,197,75, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler {
+  border:none;
+}
