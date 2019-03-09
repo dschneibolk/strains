@@ -3,6 +3,11 @@
 .hero {
   margin-top:56px;
 }
+
+form {
+text-align:center;
+}
+
 a {
   color:#A6C54B;
 }
