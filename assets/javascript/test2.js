@@ -61,8 +61,8 @@ $(document).ready(function () {
 
 
             userSearch = (mySearch).value;
-            var token = 'BQBnI9RUt86K0tttwWx_RErGHliDtqVpVGc0KTrh7plPwVDZaDQzlU_GESh6IviBQ9m1A6IkY7nfh3KF9oqQTE1M_RtL0Fazfi8eqODkG_EcgDYCp6FqTWhaqrn57E8RsWbK-7tL7Sydn3_mIOjfPCWvBxzQK58OiQ';
-            var queryURL = "https://api.spotify.com/v1/recommendations?limit=10&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
+            var token = 'BQBP3c00DQAtqU9EWNLk10mT9Ew6ILGD_t-8NsFkrZ3Ak2Mt0ZL1OLnDWb0SJPoaJDEdqaR0YEsd62rIk9nOkN0B4iu4QnzsnkHTdAEUtpOw4tguwI0VdLRSB4dbjHxEkQ1ntR-wH1Erb2CfzkZETqDv59OYMbSoxzmrx5yMsQUKkxy3XV40Lza-';
+            var queryURL = "https://api.spotify.com/v1/recommendations?limit=1&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
             $.ajax({
                 url: queryURL,
                 method: "GET",
@@ -70,11 +70,14 @@ $(document).ready(function () {
                     Authorization: 'Bearer ' + token
                 }
             })
-                .then(function (oData) {
-                    console.log(oData);
-                    $("#artistName").text(oData.tracks[0].artists.name);
-                    //   $("#artistName").text(oData.artists.items[0].name);
-                })
+                .then(function (response) {
+                    //Uri (song specific) needeed
+        
+                    var songUri= response.tracks[0].uri;
+                    console.log(songUri);
+                   $("#uri").attr("href", songUri);
+                });
+                
 
 
 
@@ -86,7 +89,6 @@ $(document).ready(function () {
 
     });
 });
-
 
 
 //       var i;
