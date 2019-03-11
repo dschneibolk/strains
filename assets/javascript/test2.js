@@ -21,15 +21,15 @@ $(document).ready(function () {
             console.log(response[0].race);
             if (response[0].race === "sativa") {
                 var max_danceability = 100;
-                var genre= "electronic";
+                var genre = "electronic";
                 console.log("sativa");
             } else if (response[0].race === "hybrid") {
                 var max_danceability = 35;
-                var genre= "alternative";
+                var genre = "alternative";
                 console.log("hybrid");
             } else if (response[0].race === "indica") {
                 var max_danceability = 10;
-                var genre= "chill";
+                var genre = "chill";
                 console.log("indica");
             }
             //search effects
@@ -61,8 +61,8 @@ $(document).ready(function () {
 
 
             userSearch = (mySearch).value;
-            var token = 'BQBP3c00DQAtqU9EWNLk10mT9Ew6ILGD_t-8NsFkrZ3Ak2Mt0ZL1OLnDWb0SJPoaJDEdqaR0YEsd62rIk9nOkN0B4iu4QnzsnkHTdAEUtpOw4tguwI0VdLRSB4dbjHxEkQ1ntR-wH1Erb2CfzkZETqDv59OYMbSoxzmrx5yMsQUKkxy3XV40Lza-';
-            var queryURL = "https://api.spotify.com/v1/recommendations?limit=1&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
+            var token = 'BQCAHK_U6c8zCbgCMJ5NZj2VCxUcxGX3mM8C_HnYqFNpkI7yNKmhRmR24a4mvLVL-Sh1nSqbEiIcr-iWFaSvuOQ2zskGOs-WHKwHW4TX6w9FWdRV5BK_Nu8vkO9SeS9ZWnsp0kkjXD91d1LlSR6cdLS7Z5OlOcwYH99Qy2DuJrxJcvGhInBNzplS';
+            var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
             $.ajax({
                 url: queryURL,
                 method: "GET",
@@ -71,13 +71,19 @@ $(document).ready(function () {
                 }
             })
                 .then(function (response) {
+                    console.log(response)
                     //Uri (song specific) needeed
-        
-                    var songUri= response.tracks[0].uri;
-                    console.log(songUri);
-                   $("#uri").attr("href", songUri);
+                    for (var i = 0; i < response.tracks.length; i++) {
+                        var songId = response.tracks[i].id;
+                        var hrefStatic= "https://open.spotify.com/embed/track/" + songId;
+
+                        console.log(response);
+                        console.log(songId);
+                     $("iframe").attr("src", hrefStatic);
+                     console.log(response.tracks[i].duration_ms);
+                    }
                 });
-                
+
 
 
 
