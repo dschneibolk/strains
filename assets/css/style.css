@@ -4,6 +4,10 @@
   margin-top:56px;
 }
 
+.nav>li{
+  text-align:right
+}
+
 #strainDiv {
   background: rgb(22,22,22,.7)!important;
 }
@@ -199,4 +203,42 @@ label:focus,
 {
     outline:0px !important;
     -webkit-appearance:none;
+}
+
+
+.hr-news {
+  margin: 50px 0px;
+}
+
+.card{
+  margin:10px 0px!important;
+}
+
+#articleImg {
+  border-bottom: 6px solid #A6C54B;
+  height:150px;
+  width:auto;
+  object-fit: cover;
+}
+
+#articleTitle {
+  font-size:18px; 
+  font-weight:600;
+  color:#333; 
+  margin:.5rem 0px;
+  line-height: 1.2em;
+}
+#articleTitle:hover {
+  text-decoration: none;
+  color:#A6C54B; 
+}
+
+#articleDesc {
+  line-height:1.2em;
+  font-size:14px;
+}
+
+#articleSourceDate {
+  font-size:12px;
+
 }
