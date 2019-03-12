@@ -19,7 +19,7 @@
 <body>
 
     <!-- nav -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
             <i class="green fas fa-cannabis fa-lg"></i>
             STRAINS
@@ -58,170 +58,82 @@
     </nav>
 
 
-
     <!-- jumbotron -->
-    <div class="jumbotron hero">
-        <div class="container mt-5 mb-5">
-            <h1 class="display-4">Hello, world!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-                to featured content or information.</p>
-            <hr class="my-4">
-            <form>
-                <input type="text" id="mySearch" placeholder="Search.." name="search">
-                <button class="search" type="search"><i class="fa fa-search">Search</i></button>
+
+    <div class="jumbotron hero cannabis vertical-center">
+        <div class="container">
+            <h1 class="display-4 white text-shadow text-center">Cannabis Strain Search</h1>
+            <h5 class="white text-shadow text-center">Lorem Ipsum Dolor Sit Amet.</h5>
+            <form class="mySearchForm mb-5">
+                <input type="text" id="mySearch" placeholder="Search..." name="search" style="width:50%;">
+                <button class="search mt-2 text-center" type="search"><i class="fa fa-search"></i></button>
             </form>
-            <div id="strain"></div>
-            <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
-        </div>
-    </div>
-
-
-
-    <div id="effectsDiv"></div>
-
-    <a id="uri" href="" > hello</a>
-
-    <!-- Card deck-->
-    <div class="container">
-
-        <!-- row 1 -->
-        <div class="card-deck mt-5 mb-5 ">
-            <div class="card text-center">
-                <i class="green fas fa-cannabis fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Strains</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <div id="strainDiv" class="row pt-2 pb-4 pl-2 pr-2">
+                <div id="strainTitle" class="col-md-12"></div>
+                <div id="strain" class="col-md-8">
+                    <div id="strainRace"></div>
+                    <div id="strainDesc"></div>
+                    <div id="strainFlavors"></div>
+                    <div id="strainMedical"></div>
+                    <div id="strainPositive"></div>
+                    <div id="strainNegative"></div>
                 </div>
-            </div>
-            <div class="card text-center">
-                <i class="green fas fa-clinic-medical fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Clinics</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
-            <div class="card text-center">
-                <i class="green fas fa-store-alt fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Dispensaries</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+                <div id="musicPlayer" class="col-md-4 text-right">
+                    <!--i frame cover to listen for event-->
+                        <a id="iframeCover" class="om-trigger-conversion"></a>
+
+                    <iframe class="musicPlayer" src="" width="300" height="380"
+                        frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- row 2 -->
-        <div class="card-deck mt-5 mb-5 ">
-            <div class="card text-center">
-                <i class="green fas fa-bong fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Brands</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
-            <div class="card text-center">
-                <i class="green fas fa-prescription-bottle-alt fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Products</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
-            <div class="card text-center">
-                <i class="green fas fa-newspaper fa-5x pt-3"></i>
-                <div class="card-body">
-                    <h5 class="card-title">Blog</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                    <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
-                </div>
-            </div>
+<!-- News -->
+<div class="bg-grey">
+<div class="p-5">
+    <div class="col-md-12 text-center"><h1>Industry News</h1></div>
+    <hr class="hr-green">
 
+<div class="card-deck pt-3">
+
+    <!-- card 1 -->
+        <div class="card">
+          <a href="" class="first-card-link"><img class="card-img-top" id="first-card-img" src="" alt="Card image cap"></a>
+          <div class="card-body">
+            <a href="" class="first-card-link"><h5 class="card-title" id="first-card-title"></h5></a>
+            <a href="" class="card-text" id="first-card-source"></a>
+            <p class="card-text" id="first-card-desc"></p>
+            <a href="" class="first-card-link"><button id="first-card-url">Read More</button></a>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="card">
+            <a href="" class="second-card-link"><img class="card-img-top" id="second-card-img" src="" alt="Card image cap"></a>
+          <div class="card-body">
+            <a href="" class="second-card-link"><h5 class="card-title" id="second-card-title"></h5></a>
+            <a href="" class="card-text" id="second-card-source"></a>
+            <p class="card-text" id="second-card-desc"></p>
+            <a href="" class="second-card-link"><button href="" id="second-card-url">Read More</button></a>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="card">
+                <a href="" class="third-card-link"><img class="card-img-top" id="third-card-img" src="" alt="Card image cap"></a>
+          <div class="card-body">
+                <a href="" class="third-card-link"><h5 class="card-title" id="third-card-title"></h5></a>
+            <a href="" class="card-text" id="third-card-source"></a>
+            <p class="card-text" id="third-card-desc"></p>
+            <a href="" class="third-card-link"><button id="third-card-url">Read More</button></a>
+          </div>
         </div>
     </div>
+</div>
+</div>
 
 
-    <!-- Marketing messaging and featurettes
-  ================================================== -->
-    <div class="container">
-
-        <div class="container marketing">
-
-            <!-- START THE FEATURETTES -->
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">First featurette heading. <span class="green">It’ll blow your
-                            mind.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-                        dapibus, tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                        role="img" aria-label="Placeholder: 500x500">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7 order-md-2">
-                    <h2 class="featurette-heading">Oh yeah, it’s that good. <span class="green">See for yourself.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-                        dapibus, tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5 order-md-1">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                        role="img" aria-label="Placeholder: 500x500">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-
-            <div class="row featurette">
-                <div class="col-md-7">
-                    <h2 class="featurette-heading">And lastly, this one. <span class="green">Checkmate.</span></h2>
-                    <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta
-                        felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce
-                        dapibus, tellus ac cursus commodo.</p>
-                </div>
-                <div class="col-md-5">
-                    <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500"
-                        height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false"
-                        role="img" aria-label="Placeholder: 500x500">
-                        <title>Placeholder</title>
-                        <rect width="100%" height="100%" fill="#eee" /><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text>
-                    </svg>
-                </div>
-            </div>
-
-            <hr class="featurette-divider">
-        </div>
-    </div>
-    </div>
-    <!-- /END THE FEATURETTES -->
-
-    <iframe src="" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
 
     <!-- Footer -->
@@ -272,92 +184,6 @@
             </div>
         </div>
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left mt-5">
-
-            <!-- Grid row -->
-            <div class="row mt-3">
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-
-                    <!-- Content -->
-                    <h6 class="text-uppercase font-weight-bold"><i class="green fas fa-cannabis fa-lg"></i> Strains</h6>
-                    <hr class="hr-green mb-4 mt-1 d-inline-block mx-auto" style="width:60px">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet,
-                        consectetur
-                        adipisicing elit.</p>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Lorem Ipsum</h6>
-                    <hr class="hr-green mb-4 mt-1 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Lorem Ipsum</h6>
-                    <hr class="hr-green mb-4 mt-1 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-                    <p>
-                        <a href="#!">Lorem Ipsum</a>
-                    </p>
-
-                </div>
-                <!-- Grid column -->
-<div id="artistName"></div>
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                    <!-- Links -->
-                    <h6 class="text-uppercase font-weight-bold">Contact</h6>
-                    <hr class="hr-green mb-4 mt-1 d-inline-block mx-auto" style="width: 60px;">
-                    <p>
-                        <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                    <p>
-                        <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                    <p>
-                        <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                    <p>
-                        <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-
-                </div>
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-
-        </div>
-        <!-- Footer Links -->
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3">© 2019 Copyright:
@@ -378,49 +204,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/test2.js"></script>
+    <script src="assets/javascript/javascript.js"></script>
 
-
-
-
-
-
-
-
-    <!--playback script -->
-
-         
-   <!-- <script src="https://sdk.scdn.co/spotify-player.js"></script>
-    <script>window.onSpotifyWebPlaybackSDKReady = () => {
-        const token = 'BQBP3c00DQAtqU9EWNLk10mT9Ew6ILGD_t-8NsFkrZ3Ak2Mt0ZL1OLnDWb0SJPoaJDEdqaR0YEsd62rIk9nOkN0B4iu4QnzsnkHTdAEUtpOw4tguwI0VdLRSB4dbjHxEkQ1ntR-wH1Erb2CfzkZETqDv59OYMbSoxzmrx5yMsQUKkxy3XV40Lza-';
-        const player = new Spotify.Player({
-          name: 'Web Playback SDK Quick Start Player',
-          getOAuthToken: cb => { cb(token); }
-        });
-      
-        // Error handling
-        player.addListener('initialization_error', ({ message }) => { console.error(message); });
-        player.addListener('authentication_error', ({ message }) => { console.error(message); });
-        player.addListener('account_error', ({ message }) => { console.error(message); });
-        player.addListener('playback_error', ({ message }) => { console.error(message); });
-      
-        // Playback status updates
-        player.addListener('player_state_changed', state => { console.log(state); });
-      
-        // Ready
-        player.addListener('ready', ({ device_id }) => {
-          console.log('Ready with Device ID', device_id);
-        });
-      
-        // Not Ready
-        player.addListener('not_ready', ({ device_id }) => {
-          console.log('Device ID has gone offline', device_id);
-        });
-      
-        // Connect to the player!
-        player.connect();
-      };
-    </script>-->
 
 
 </body>
