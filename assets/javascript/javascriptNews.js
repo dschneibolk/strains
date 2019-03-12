@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-
-    //======= Strains API =======
+    
+    //Strains API 
     $("#strainDiv").hide();
 
     var key = "PBbUlIS";
@@ -63,67 +63,58 @@ $(document).ready(function () {
     $("#strainDiv").hide();
 
 
-
-
-    //======= newsAPI =======
-
+//newsAPI 
 
     var url = 'https://newsapi.org/v2/everything?' +
         'q=Cannabis&' +
-        'from=2019-03-12&' +
+        'from=2019-03-11&' +
         'sortBy=popularity&' +
         'apiKey=eb685845ec724a788b048c258c786cd7';
 
     var req = new Request(url);
 
+
     fetch(req)
         .then((response) => {
             console.log(response);
             return response.json()
+
         })
         .then((data) => {
             console.log(data);
-
-            let articleDiv = ""; 
-            let articleCard = "";
-
-            for (i = 0; i < 9; i++) {
-
-                articleDiv = $("<div class='col-md-4'>");
-                articleCard = $("<div class='card mb-5'>");
-                articleImg = $("<img>");
-                articleDesc = $("<p>");
-                articleTitle = $("<a>");
-                articleSource = $("<p>");
-                articleDate = $("<p>");
-
-                articleDiv.append(articleCard);
-                $("#news-blog").append(articleDiv);
-                articleCard.append(articleImg, articleTitle, articleDesc, articleDate, articleSource);
-               
-                //img
-                articleImg.attr("class", "card-img-top img-fluid");
-                articleImg.attr("id", "articleImg");
-                articleImg.attr('src', data.articles[i].urlToImage);
-
-                //title
-                articleTitle.attr('href', data.articles[i].url);
-                articleTitle.attr('class', "pl-2 pr-2");
-                articleTitle.attr('id', "articleTitle");
-                articleTitle.html(data.articles[i].title);
-
-                //description
-                articleDesc.html(data.articles[i].description);
-                articleDesc.attr("id", "articleDesc");
-                articleDesc.attr("class", "pl-2 pr-2");
-
-                //source
-                articleSource.attr("class", "card-footer mb-0");
-                articleSource.html(data.articles[i].source.name);
+            console.log(data.articles);
+            // var i;
+            // for (i = 0; i < data.length; i++) {
 
 
-            }
-        });
+            
+                //first card
+                $("#first-card-img").attr("src", data.articles[0].urlToImage)
+                $(".first-card-link").attr("href", data.articles[0].url)
+                $("#first-card-title").html(data.articles[0].title);
+                $("#first-card-source").html(data.articles[0].source.name)
+                $("#first-card-desc").html(data.articles[0].description);
+                $("#first-card-url").attr("src", data.articles[0].url)
+                //secord card
+                $("#second-card-img").attr("src", data.articles[1].urlToImage)
+                $(".second-card-link").attr("href", data.articles[1].url)
+                $("#second-card-title").html(data.articles[1].title);
+                $("#second-card-source").html(data.articles[1].source.name).attr("href", data.articles[1].url)
+                $("#second-card-desc").html(data.articles[1].description);
+                $("#second-card-url").attr("src", data.articles[1].url)
+                //third card
+                $("#third-card-img").attr("src", data.articles[2].urlToImage)
+                $(".third-card-link").attr("href", data.articles[2].url)
+                $("#third-card-title").html(data.articles[2].title);
+                $("#third-card-source").html(data.articles[2].source.name)
+                $("#third-card-desc").html(data.articles[2].description);
+                $("#third-card-url").attr("src", data.articles[2].url)
+            // }
+        })
+
+
+
+
+
+
 });
-
-
