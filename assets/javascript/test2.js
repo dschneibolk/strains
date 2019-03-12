@@ -58,11 +58,13 @@ $(document).ready(function () {
 
 
             });
-
+            
+           // setTimeout(player, duration)
+           
 
             userSearch = (mySearch).value;
-            var token = 'BQCAHK_U6c8zCbgCMJ5NZj2VCxUcxGX3mM8C_HnYqFNpkI7yNKmhRmR24a4mvLVL-Sh1nSqbEiIcr-iWFaSvuOQ2zskGOs-WHKwHW4TX6w9FWdRV5BK_Nu8vkO9SeS9ZWnsp0kkjXD91d1LlSR6cdLS7Z5OlOcwYH99Qy2DuJrxJcvGhInBNzplS';
-            var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
+            var token = 'BQCpVUuPkJAwxTXOdZ5vPhxN1ldK-9syG4kQAOl91UXfk2GBNJQpCPfCDcPQzame0w8trZPiHVIwjHK7UAi4okmTFSdIbLXGgiJQo0QMQifuuKi_TSdbt6SjBixOaSMUHgpZsOrHvf7MxJmU_BJhdeScQC6lIQSrYxtx05krYum_HcXwl3OH0lt9';
+            var queryURL = "https://api.spotify.com/v1/recommendations?limit=20&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
             $.ajax({
                 url: queryURL,
                 method: "GET",
@@ -70,22 +72,31 @@ $(document).ready(function () {
                     Authorization: 'Bearer ' + token
                 }
             })
+            
                 .then(function (response) {
+                    var i=0
+                    var duration= response.tracks[i].duration_ms;
+                    //var test=response;
                     console.log(response)
+                    setInterval(function (){
+                        console.log("working");
                     //Uri (song specific) needeed
-                    for (var i = 0; i < response.tracks.length; i++) {
+                    for (i <=response.tracks.length; i++;) {
                         var songId = response.tracks[i].id;
                         var hrefStatic= "https://open.spotify.com/embed/track/" + songId;
-
-                        console.log(response);
+                        var duration= response.tracks[i].duration_ms;
+                       // console.log(test);
                         console.log(songId);
+                        console.log(duration);
                      $("iframe").attr("src", hrefStatic);
-                     console.log(response.tracks[i].duration_ms);
+                     //console.log(response.tracks[i].duration_ms);
                     }
-                });
-
-
-
+                }, duration);
+                        });
+                
+            
+ 
+ 
 
         });
 
