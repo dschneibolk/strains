@@ -242,3 +242,17 @@ label:focus,
   font-size:12px;
 
 }
+
+
+#beerIcon {
+
+  display: inline-block;
+  
+}
+#beerName, #mug {
+  line-height: 50px;
+}
+
+#mug {
+  vertical-align: middle;
+}

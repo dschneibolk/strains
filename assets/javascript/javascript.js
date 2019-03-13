@@ -117,7 +117,10 @@ $(document).ready(function () {
                 for (var j = 0; j < response.length; j++){
                 var beerName= response[j].name;
                 var beerTag= response[j].tagline;
-                $("#beer").html("<p class='white'>"+ beerName +"</p><br>");
+                $("#beerIcon").html("<i id= 'mug' class='beerIcon fas fa-beer fa-3x green'> </i> <strong><span class='green'> :  </span></strong> " + "<span class='white'>"+ beerName + beerTag + "</span>" );
+               // $("#beer").text("<p class='white'>" + beerName +"</p><br>");
+                
+
                 console.log(beerName);
                 console.log(beerTag);
                 console.log(beerImg);
