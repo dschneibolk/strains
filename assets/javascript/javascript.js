@@ -148,6 +148,7 @@ $(document).ready(function () {
         'q=Cannabis&Music' +
         'from=2019-03-12&' +
         'sortBy=popularity&' +
+        'language=en&'+
         'apiKey=eb685845ec724a788b048c258c786cd7';
 
     var req = new Request(url);
@@ -165,7 +166,7 @@ $(document).ready(function () {
 
             for (i = 0; i < 9; i++) {
 
-                articleDiv = $("<div class='col-md-4'>");
+                articleDiv = $("<div class='col-md-4 '>");
                 articleCard = $("<div class='card mb-5'>");
                 articleImg = $("<img>");
                 articleDesc = $("<p>");
