@@ -68,7 +68,7 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
-                $("#strainFlavors").append("<p class='green'> <strong> Flavors: </strong><span class='white'>" + response + "</span></p>");
+                $("#strainFlavors").html("<p class='green'> <strong> Flavors: </strong><span class='white'>" + response + "</span></p>");
 
 
             });
