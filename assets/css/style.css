@@ -215,3 +215,16 @@ label:focus,
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+#beerIcon {
+
+  display: inline-block;
+  
+}
+#beerName, #mug {
+  line-height: 50px;
+}
+
+#mug {
+  vertical-align: middle;
+}

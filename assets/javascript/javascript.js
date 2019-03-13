@@ -6,8 +6,11 @@ $(document).ready(function () {
 
     var key = "PBbUlIS";
 
-
+    
+    
     $(".search").click(function () {
+       
+        
         var userSearch = (mySearch).value;
 
         var queryURL = "http://strainapi.evanbusse.com/" + key + "/strains/search/name/" + userSearch;
@@ -22,7 +25,26 @@ $(document).ready(function () {
             $("#strainRace").html("<h4 class='white'>" + response[0].race + "</h4> <br>");
             $("#strainDesc").html("<p class='white'>" + response[0].desc + "</p><br>");
 
+            
             var strainID = response[0].id;
+            console.log(response[0].race);
+            if (response[0].race === "sativa") {
+                var max_danceability = 1;
+                var genre = "electronic%2C%20hip-hop";
+                var foodPair= "mango";
+                console.log("sativa");
+            } else if (response[0].race === "hybrid") {
+                var max_danceability = .5;
+                var genre = "alternative%2C%20hip-hop";
+                var foodPair= "salami";
+                console.log("hybrid");
+            } else if (response[0].race === "indica") {
+                var max_danceability = .2;
+                var genre = "chill%2C%20classical";
+                var foodPair = "mushroom";
+                console.log("indica");
+            }
+
 
             //search effects
             var effectURL = "http://strainapi.evanbusse.com/" + key + "/strains/data/effects/" + strainID;
@@ -50,6 +72,60 @@ $(document).ready(function () {
 
 
             });
+            userSearch = (mySearch).value;
+            var token = 'BQDyWMSXJ95Gf3UK0tCE7CXeu4HvsMcLiyTwfKtukRjpG3GhTy8C6xQP6MZujN7NxKArbtP6fcrDqztVC3TRjPZlMALy7YWQlzH5g1-vJzYPEliKJtfGzf35iuPUszXK4jfZuVWi9G8jKgx89iCQPCPy6j-h2DzPtFVy35YPTjv4YgDVK1OvdKHd';
+            var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            })
+            .then(function (response) {
+                console.log(response)
+                //Uri (song specific) needeed
+                for (var i = 0; i < response.tracks.length; i++) {
+                    var songId = response.tracks[i].id;
+                    var hrefStatic = "https://open.spotify.com/embed/track/" + songId;
+                    var duration = response.tracks[i].duration_ms;
+                    console.log(response);
+                    console.log(songId);
+                    console.log(duration);
+                    $("iframe").attr("src", hrefStatic);
+                    //console.log(response.tracks[i].duration_ms);
+                }
+                // var i = 0;
+                // var intervalid = setInterval( function() {
+                //     if (i < response.tracks.length) {
+                //         console.log(response.tracks[i].id);
+                //         i++;
+                //     } else {
+                //         clearInterval(intervalid)
+                //         console.log("clearing interval")
+                //     }
+                // },10000)
+                
+
+            });
+              
+           
+            $.ajax({
+                url:  "https://api.punkapi.com/v2/beers?food=" + foodPair,
+            }) .then(function(response){
+                console.log(response);
+                for (var j = 0; j < response.length; j++){
+                var beerName= response[j].name;
+                var beerTag= response[j].tagline;
+                $("#beerIcon").html("<i id= 'mug' class='beerIcon fas fa-beer fa-3x green'> </i> <strong><span class='green'> :  </span></strong> " + "<span class='white'>"+ beerName + beerTag + "</span>" );
+               // $("#beer").text("<p class='white'>" + beerName +"</p><br>");
+                
+
+                console.log(beerName);
+                console.log(beerTag);
+                console.log(beerImg);
+            }
+            })
 
         });
 
@@ -69,7 +145,7 @@ $(document).ready(function () {
 
 
     var url = 'https://newsapi.org/v2/everything?' +
-        'q=Cannabis&' +
+        'q=Cannabis&Music' +
         'from=2019-03-12&' +
         'sortBy=popularity&' +
         'language=en&'+
