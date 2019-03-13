@@ -6,8 +6,11 @@ $(document).ready(function () {
 
     var key = "PBbUlIS";
 
-
+    
+    
     $(".search").click(function () {
+       
+        
         var userSearch = (mySearch).value;
 
         var queryURL = "http://strainapi.evanbusse.com/" + key + "/strains/search/name/" + userSearch;
@@ -70,7 +73,7 @@ $(document).ready(function () {
 
             });
             userSearch = (mySearch).value;
-            var token = 'BQAZ1g1duQugNXdwRkJCMmnOilUlt7fZFn9fBkvtDJi5ZRkP4V2rR7uURwxa2byrhoUfI6_S7zBhj8eqXGGpL6j323bLGHCHIt7WiCVJ0CzKXEG2lql3vP5VMkv31w4IeyrQE4rC_vUNONmWOEN7y5RvjY0mpEQVimIVEypLvIbaQhiELpG2vCfe';
+            var token = 'BQDyWMSXJ95Gf3UK0tCE7CXeu4HvsMcLiyTwfKtukRjpG3GhTy8C6xQP6MZujN7NxKArbtP6fcrDqztVC3TRjPZlMALy7YWQlzH5g1-vJzYPEliKJtfGzf35iuPUszXK4jfZuVWi9G8jKgx89iCQPCPy6j-h2DzPtFVy35YPTjv4YgDVK1OvdKHd';
             var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
             $.ajax({
                 url: queryURL,
@@ -111,6 +114,14 @@ $(document).ready(function () {
                 url:  "https://api.punkapi.com/v2/beers?food=" + foodPair,
             }) .then(function(response){
                 console.log(response);
+                for (var j = 0; j < response.length; j++){
+                var beerName= response[j].name;
+                var beerTag= response[j].tagline;
+                $("#beer").html("<p class='white'>"+ beerName +"</p><br>");
+                console.log(beerName);
+                console.log(beerTag);
+                console.log(beerImg);
+            }
             })
 
         });
