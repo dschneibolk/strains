@@ -22,7 +22,26 @@ $(document).ready(function () {
             $("#strainRace").html("<h4 class='white'>" + response[0].race + "</h4> <br>");
             $("#strainDesc").html("<p class='white'>" + response[0].desc + "</p><br>");
 
+            
             var strainID = response[0].id;
+            console.log(response[0].race);
+            if (response[0].race === "sativa") {
+                var max_danceability = 1;
+                var genre = "electronic%2C%20hip-hop";
+                var foodPair= "mango";
+                console.log("sativa");
+            } else if (response[0].race === "hybrid") {
+                var max_danceability = .5;
+                var genre = "alternative%2C%20hip-hop";
+                var foodPair= "salami";
+                console.log("hybrid");
+            } else if (response[0].race === "indica") {
+                var max_danceability = .2;
+                var genre = "chill%2C%20classical";
+                var foodPair = "mushroom";
+                console.log("indica");
+            }
+
 
             //search effects
             var effectURL = "http://strainapi.evanbusse.com/" + key + "/strains/data/effects/" + strainID;
@@ -50,6 +69,49 @@ $(document).ready(function () {
 
 
             });
+            userSearch = (mySearch).value;
+            var token = 'BQAZ1g1duQugNXdwRkJCMmnOilUlt7fZFn9fBkvtDJi5ZRkP4V2rR7uURwxa2byrhoUfI6_S7zBhj8eqXGGpL6j323bLGHCHIt7WiCVJ0CzKXEG2lql3vP5VMkv31w4IeyrQE4rC_vUNONmWOEN7y5RvjY0mpEQVimIVEypLvIbaQhiELpG2vCfe';
+            var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
+            $.ajax({
+                url: queryURL,
+                method: "GET",
+                headers: {
+                    Authorization: 'Bearer ' + token
+                }
+            })
+            .then(function (response) {
+                console.log(response)
+                //Uri (song specific) needeed
+                for (var i = 0; i < response.tracks.length; i++) {
+                    var songId = response.tracks[i].id;
+                    var hrefStatic = "https://open.spotify.com/embed/track/" + songId;
+                    var duration = response.tracks[i].duration_ms;
+                    console.log(response);
+                    console.log(songId);
+                    console.log(duration);
+                    $("iframe").attr("src", hrefStatic);
+                    //console.log(response.tracks[i].duration_ms);
+                }
+                // var i = 0;
+                // var intervalid = setInterval( function() {
+                //     if (i < response.tracks.length) {
+                //         console.log(response.tracks[i].id);
+                //         i++;
+                //     } else {
+                //         clearInterval(intervalid)
+                //         console.log("clearing interval")
+                //     }
+                // },10000)
+                
+
+            });
+              
+           
+            $.ajax({
+                url:  "https://api.punkapi.com/v2/beers?food=" + foodPair,
+            }) .then(function(response){
+                console.log(response);
+            })
 
         });
 
@@ -69,7 +131,7 @@ $(document).ready(function () {
 
 
     var url = 'https://newsapi.org/v2/everything?' +
-        'q=Cannabis&' +
+        'q=Cannabis&Music' +
         'from=2019-03-12&' +
         'sortBy=popularity&' +
         'apiKey=eb685845ec724a788b048c258c786cd7';
