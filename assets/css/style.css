@@ -231,9 +231,9 @@ label:focus,
 
 
 .arrow {
-  display:flex;
-  flex-direction: column;
-  align-self:center;
+  position: absolute;
+  right:50%;
+  bottom:-100px;
   text-align: center;
   margin: 8% 0;
 }
@@ -254,3 +254,5 @@ label:focus,
     transform: translateY(-15px);
   }
 }
+
+

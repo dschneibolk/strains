@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+    //News scroll
+    $(".newsButton").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#news").offset().top-50},
+            'slow');
+    });
 
     //======= Strains API =======
     $("#strainDiv").hide();
