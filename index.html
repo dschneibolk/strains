@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Elevated | Home</title>
+    <link rel='icon' href='favicon.ico' type='image/x-icon'>
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -50,8 +51,9 @@
                     <a class="nav-link" href="dashboard.html"><i class="green fas fa-tachometer-alt"></i> Dashboard</a>
                 </li>
                 <li class="nav-item ml-auto">
-                        <a class="nav-link newsButton" data-toggle="collapse" data-target=".navbar-collapse.show" href="#news"><i class="green fas fa-newspaper"></i> News</a>
-                    </li>
+                    <a class="nav-link newsButton" data-toggle="collapse" data-target=".navbar-collapse.show" href="#news"><i
+                            class="green fas fa-newspaper"></i> News</a>
+                </li>
                 <li class="nav-item ml-auto">
                     <a class="nav-link" href="#"><i class="green fas fa-sign-out-alt"></i> Logout</a>
                 </li>
@@ -82,8 +84,10 @@
                     <div id="strainMedical"></div>
                     <div id="strainPositive"></div>
                     <div id="strainNegative"></div>
-                    <div id=beerIcon> <p id="beerName"></p></div>
-                    
+                    <div id=beerIcon>
+                        <p id="beerName"></p>
+                    </div>
+
 
                 </div>
                 <div id="musicPlayer" class="col-md-4 text-right">
@@ -93,31 +97,34 @@
             </div>
             <div class="arrow bounce">
                 <a class="fas fa-angle-double-down fa-2x newsButton" href="#news"></a>
-              </div>
+            </div>
         </div>
     </div>
 
     <!-- News -->
     <section id="news">
-    <div class="bg-grey">
-        <div class="container">
-            <div class="pt-5 pb-2">
-                <div class="col-md-12 text-center">
-                    <h1>Industry News</h1>
-                </div>
-                <hr class="hr-green">
-            </div>
-
+        <div class="bg-grey pb-5">
             <div class="container">
-                <div class="row">
-                    <div id="news-blog" class="card-deck pt-3 pb-5">
+                <div class="pt-5 pb-2">
+                    <div class="col-md-12 text-center">
+                        <h1>Industry News</h1>
+                    </div>
+                    <hr class="hr-green">
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div id="news-blog" class="card-deck pt-3 pb-5">
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-md-12 text-center">
+                    <button type="button" class="btn btn-success">Load More News</button>
+                </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 

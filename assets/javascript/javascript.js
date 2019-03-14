@@ -27,9 +27,9 @@ $(document).ready(function () {
         }).then(function (response) {
             $("#strainDiv").show();
             console.log(response);
-            $("#strainTitle").html("<h1 class='white'>" + response[0].name + "</h1> <hr class='hr-green'>");
-            $("#strainRace").html("<h4 class='white'>" + response[0].race + "</h4> <br>");
-            $("#strainDesc").html("<p class='white'>" + response[0].desc + "</p><br>");
+            $("#strainTitle").html("<h1 class='white'>" + response[0].name + " <span class='green' style='font-size:18px'>" + response[0].race + "</span></h1> <hr class='hr-green'>");
+            // $("#strainRace").html("<h4 class='white'>" + response[0].race + "</h4> <br>");
+            $("#strainDesc").html("<p class='white'>" + response[0].desc + "</p>");
 
             
             var strainID = response[0].id;
@@ -60,9 +60,9 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
-                $("#strainMedical").html("<p class='green'> <strong> Medical:</strong> <span class='white'>" + response.medical + "</span></p>");
-                $("#strainPositive").html("<p class='green'> <strong> Positive:</strong> <span class='white'>" + response.positive + "</span></p>");
-                $("#strainNegative").html("<p class='green'> <strong> Negative:</strong> <span class='white'>" + response.negative + "</span></p>");
+                $("#strainMedical").html("<p class='green'> <strong> Medical Effects:</strong> <span class='white'>" + response.medical + "</span></p>");
+                $("#strainPositive").html("<p class='green'> <strong> Positive Effects:</strong> <span class='white'>" + response.positive + "</span></p>");
+                $("#strainNegative").html("<p class='green'> <strong> Negative Effects:</strong> <span class='white'>" + response.negative + "</span></p>");
 
             });
 
@@ -204,6 +204,10 @@ $(document).ready(function () {
                 articleSource.attr("class", "card-footer mb-0");
                 articleSource.html(data.articles[i].source.name);
 
+                // $(".newsMoreButton").click(function() {
+                
+                   
+                // });
 
             }
         });
