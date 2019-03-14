@@ -78,7 +78,7 @@ $(document).ready(function () {
 
             });
             userSearch = (mySearch).value;
-            var token = 'BQDyWMSXJ95Gf3UK0tCE7CXeu4HvsMcLiyTwfKtukRjpG3GhTy8C6xQP6MZujN7NxKArbtP6fcrDqztVC3TRjPZlMALy7YWQlzH5g1-vJzYPEliKJtfGzf35iuPUszXK4jfZuVWi9G8jKgx89iCQPCPy6j-h2DzPtFVy35YPTjv4YgDVK1OvdKHd';
+            var token = 'BQCZ5KnpH03pQyXQrdzxkWzzjZFpHexhaYzi6CwtB_wToWmalcdttQZKZFhBNym_G1jtCs0uyfov7hwdk-XFcusk48EqTJZH744NyPt-0BnwBlH3pPTtgynnVmezlSwlCc-dk4peJBYzCU900sR3JOctEzt2KPxKfrBNWl6AXDk5zYfD9VJPblGB';
             var queryURL = "https://api.spotify.com/v1/recommendations?limit=3&market=ES&seed_genres=" + genre + "&max_danceability=" + max_danceability;
             $.ajax({
                 url: queryURL,
