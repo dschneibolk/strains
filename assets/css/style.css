@@ -289,3 +289,21 @@ button.navbar-toggler.custom-toggler, button.navbar-toggler.custom-toggler:focus
     transform: translateY(-12px);
   }
 }
+
+button.search{
+ border:none;
+}
+
+button.search:hover{
+  background:#A6C54B;
+  border:none;
+}
+
+button.search:hover i.fa-search{
+  color:white;
+
+}
+
+input#mySearch{
+  border:none;
+}
