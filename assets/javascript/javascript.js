@@ -151,7 +151,7 @@ $(document).ready(function () {
 
 
     var url = 'https://newsapi.org/v2/everything?' +
-        'q=Cannabis&Music' +
+        'q=Cannabis&' +
         'from=2019-03-12&' +
         'sortBy=popularity&' +
         'language=en&'+
