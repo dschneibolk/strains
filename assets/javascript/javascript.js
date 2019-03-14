@@ -63,7 +63,6 @@ $(document).ready(function () {
                 $("#strainMedical").html("<p class='green'> <strong> Medical Effects:</strong> <span class='white'>" + response.medical + "</span></p>");
                 $("#strainPositive").html("<p class='green'> <strong> Positive Effects:</strong> <span class='white'>" + response.positive + "</span></p>");
                 $("#strainNegative").html("<p class='green'> <strong> Negative Effects:</strong> <span class='white'>" + response.negative + "</span></p>");
-
             });
 
             //search flavors
